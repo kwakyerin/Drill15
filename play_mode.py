@@ -38,9 +38,9 @@ def init():
     game_world.add_objects(zombies,1)
     
     #좀비랑 소년이랑 충돌 설정
-    game_world.add_collision_pair("zombie:ball",boy,None)
+    game_world.add_collision_pair("boy:Zombie",boy,None)
     for zombie in zombies:
-        game_world.add_collision_pair("zombie:ball",None,zombie)
+        game_world.add_collision_pair("boy:Zombie",None,zombie)
     
     #공
     global balls

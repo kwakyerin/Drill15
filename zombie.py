@@ -56,5 +56,9 @@ class Zombie:
     def get_bb(self):
         return self.x - 100, self.y - 100, self.x + 100, self.y + 100
     
-    def handle_collision(self):
+    def handle_collision(self,group,other):
+        if group=="boy::Zombie":
+            game_framework.quit()
+            #게임 종료되게 하기
+            pass
         pass
