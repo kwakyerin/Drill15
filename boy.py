@@ -190,9 +190,10 @@ class Boy:
     def handle_collision(self,group,other):
         if group == "boy:ball":
             self.ball_count+=1
-            
-        if group=="boy::zombie":
-            pass        
+        if group=="boy:zombie":
+            game_framework.quit()
+            pass
+                
 
     def fire_ball(self):
         if self.ball_count>0:
@@ -200,4 +201,5 @@ class Boy:
             ball=Ball(self.x+self.face_dir*40,self.y+100,self.face_dir)
             game_world.add_oject(ball,1)
             game_world.add_collision_pair('grass:ball',None,ball)
-            game_world.add_collision_pair('boy:ball',None,ball)        
+            game_world.add_collision_pair('boy:ball',None,ball)
+            #game_world.add_collision_pair('ball:zombie',None,ball)        

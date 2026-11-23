@@ -48,6 +48,9 @@ class Ball:
         if group=="boy:ball":
             game_world.remove_object(self)
         elif group=='grass:ball':
-            self.stopped=True    
+            self.stopped=True
+        elif group=="ball:zombie":
+            print("공이랑 좀비랑 닿음")
+            game_world.remove_object(self)        
 
 

@@ -57,8 +57,8 @@ class Zombie:
         return self.x - 80, self.y - 100, self.x + 80, self.y + 100
     
     def handle_collision(self,group,other):
-        if group=="boy::zombie":
+        if group=="boy:zombie":
+            print("좀비랑 캐릭터랑 닿음")
             game_framework.quit()
-            #게임 종료되게 하기
-            pass
-        pass
+        if group=="ball:zombie":
+           pass    
