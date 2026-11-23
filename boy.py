@@ -202,4 +202,4 @@ class Boy:
             game_world.add_oject(ball,1)
             game_world.add_collision_pair('grass:ball',None,ball)
             game_world.add_collision_pair('boy:ball',None,ball)
-            #game_world.add_collision_pair('ball:zombie',None,ball)        
+            game_world.add_collision_pair('ball:zombie',None,ball)       

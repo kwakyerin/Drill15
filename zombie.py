@@ -1,4 +1,5 @@
 import random
+#from ball import Ball
 
 from pico2d import load_image, draw_rectangle, clamp
 
@@ -19,9 +20,9 @@ FRAMES_PER_ACTION = 10
 
 MIN_X, MAX_X = 800, 1600  # 좀비가 오가는 구간
 
-
 class Zombie:
     images = None
+    heart=2
 
     def load_images(self):
         if Zombie.images is None:
@@ -34,6 +35,7 @@ class Zombie:
         self.x, self.y = random.randint(MIN_X, MAX_X), 150
         self.frame = random.randint(0, 9)
         self.dir = random.choice([-1, 1])
+        self.heart=2
 
     def update(self):
         dt = game_framework.frame_time
@@ -61,4 +63,6 @@ class Zombie:
             print("좀비랑 캐릭터랑 닿음")
             game_framework.quit()
         if group=="ball:zombie":
-           pass    
+            #game_world.remove_object(self)
+            pass
+             
