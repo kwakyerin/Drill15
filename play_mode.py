@@ -36,7 +36,13 @@ def init():
 
     zombies=[Zombie()for _ in range(4)]
     game_world.add_objects(zombies,1)
-
+    
+    #좀비랑 소년이랑 충돌 설정
+    game_world.add_collision_pair("zombie:ball",boy,None)
+    for zombie in zombies:
+        game_world.add_collision_pair("zombie:ball",None,zombie)
+    
+    #공
     global balls
     balls = [Ball(random.randint(100, 1500), 60, 0) for _ in range(30)]
     game_world.add_objects(balls, 1)
