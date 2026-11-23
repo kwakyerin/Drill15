@@ -38,9 +38,9 @@ def init():
     game_world.add_objects(zombies,1)
     
     #좀비랑 소년이랑 충돌 설정
-    game_world.add_collision_pair("boy:Zombie",boy,None)
+    game_world.add_collision_pair("boy:zombie",boy,None)
     for zombie in zombies:
-        game_world.add_collision_pair("boy:Zombie",None,zombie)
+        game_world.add_collision_pair("boy:zombie",None,zombie)
     
     #공
     global balls
@@ -53,6 +53,12 @@ def init():
         game_world.add_collision_pair("boy:ball",None,ball)
 
     game_world.add_collision_pair('grass:ball',grass,None)
+    
+    #공이랑 좀비랑 충돌 설정
+    for ball in balls:
+        game_world.add_collision_pair("ball:zombie",ball,None)
+    for zombie in zombies:
+        game_world.add_collision_pair("ball:zombie",None,zombie)    
 
 def pause():
     boy.pause()
